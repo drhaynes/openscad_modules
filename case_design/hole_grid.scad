@@ -1,9 +1,10 @@
+
 // Creates a grid of cylinders for cutting out a matrix of holes (e.g. for pushbuttons)
 module hole_grid(holes = 10,             // how many holes?
-rows = 2,               // number of rows the buttons should be arranged in.
-hole_radius = 5.5,      // Set this to the exact radius (e.g. of pressable part of buttons).
-hole_spacing = 17.5,    // centre-to-centre distance of buttons (17.5 is std for pcb buttons).
-height = 3) {        // how tall should the cylinders for the hole be?
+                 rows = 2,               // number of rows the buttons should be arranged in.
+                 hole_radius = 5.5,      // Set this to the exact radius (e.g. of pressable part of buttons).
+                 hole_spacing = 17.5,    // centre-to-centre distance of buttons (17.5 is std for pcb buttons).
+                 height = 3) {        // how tall should the cylinders for the hole be?
    nudge = 0.75; // to ensure buttons fit in holes
    adjusted_hole_radius = hole_radius + nudge;
    epsilon = 0.001; // to ensure CSG subtraction works ok
