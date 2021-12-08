@@ -5,6 +5,7 @@ module countersunk_hole(head_diameter = 7,
                         countersink_depth = 3,
                         self_tapping = false) {
 
+   epsilon = 0.01;
    // Allow for self-tapping if required
    bolt_hole_diameter = (self_tapping == true) ? 0.7 * bolt_diameter : bolt_diameter;
 
@@ -14,9 +15,13 @@ module countersunk_hole(head_diameter = 7,
 
    union() {
       translate([0, 0, straight_part_depth]) {
+         // countersink
          cylinder(r1 = bolt_hole_diameter / 2, r2 = head_diameter / 2, h = countersink_depth);
       }
-      cylinder(r = bolt_hole_diameter / 2, h = straight_part_depth);
+      // shaft
+      translate([0, 0, epsilon]) {
+         cylinder(r = bolt_hole_diameter / 2, h = straight_part_depth + epsilon);
+      }
    }
 }
 
@@ -30,4 +35,4 @@ module countersunk_hole_m3(hole_depth = 5, self_tapping = false) {
 
 // Test code
 $fs = 0.15;
-countersunk_hole();
+countersunk_hole_m3();
