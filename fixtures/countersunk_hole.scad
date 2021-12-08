@@ -12,10 +12,12 @@ module countersunk_hole(head_diameter = 7,
    straight_part_depth = hole_depth - countersink_depth;
    assert(straight_part_depth >= 0);
 
-   translate([0, 0, straight_part_depth]) {
-      cylinder(r1 = bolt_hole_diameter / 2, r2 = head_diameter / 2, h = countersink_depth);
+   union() {
+      translate([0, 0, straight_part_depth]) {
+         cylinder(r1 = bolt_hole_diameter / 2, r2 = head_diameter / 2, h = countersink_depth);
+      }
+      cylinder(r = bolt_hole_diameter / 2, h = straight_part_depth);
    }
-   cylinder(r = bolt_hole_diameter / 2, h = straight_part_depth);
 }
 
 // Test code
