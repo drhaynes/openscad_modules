@@ -13,3 +13,7 @@ module speaker_grill_round(radius = 20,
       cylinder(h = depth, r = radius);
    }
 }
+
+// Test code
+$fs = 0.15;
+speaker_grill_round();

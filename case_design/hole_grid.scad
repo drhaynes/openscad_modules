@@ -33,3 +33,7 @@ module hole_grid(holes = 10,             // how many holes?
       }
    }
 }
+
+// Test code
+$fs = 0.15;
+hole_grid();
