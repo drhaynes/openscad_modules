@@ -20,6 +20,14 @@ module countersunk_hole(head_diameter = 7,
    }
 }
 
+module countersunk_hole_m3(hole_depth = 5, self_tapping = false) {
+   countersunk_hole(head_diameter = 6, // 5.7 - 6.0 in reality
+                    bolt_diameter = 3,
+                    hole_depth = hole_depth,
+                    countersink_depth = 1.7,
+                    self_tapping = self_tapping);
+}
+
 // Test code
 $fs = 0.15;
 countersunk_hole();
