@@ -43,5 +43,5 @@ module rounded_cube(size = 10, center = false, radius = 0.5, apply_to = "all") {
 }
 
 // Test code
-//$fs = 0.15;
-//rounded_cube();
+$fs = 0.15;
+rounded_cube();
