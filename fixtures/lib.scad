@@ -4,3 +4,4 @@
 
 include <bolt_boss_male.scad>;
 include <countersunk_hole.scad>;
+include <hex_nut_hole.scad>;
