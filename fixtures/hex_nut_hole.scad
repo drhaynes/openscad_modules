@@ -12,10 +12,11 @@ module hex_nut_hole(nut_height = 3,
    assert(straight_part_depth >= 0);
 
    epsilon = 0.01;
+   nudge_amount = 0.1; // Should allow for a nice push-fit.
    union() {
       // hex shaped hole
       translate([0, 0, straight_part_depth]) {
-         cylinder(h=nut_height, d=span, $fn=6);
+         cylinder(h = nut_height, d = span + nudge_amount, $fn=6);
       }
       // bolt hole
       translate([0, 0, epsilon]) {
