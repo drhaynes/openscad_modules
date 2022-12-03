@@ -4,3 +4,4 @@
 
 include <rounded_cube.scad>;
 include <rounded_rect.scad>;
+include <triangular_prism.scad>;
